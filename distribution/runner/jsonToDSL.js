@@ -45,12 +45,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
-var rest_1 = __importDefault(require("@octokit/rest"));
+var GitHubNodeAPI = require("@octokit/rest");
 var GitHubGit_1 = require("../platforms/github/GitHubGit");
 var GitHub_1 = require("../platforms/GitHub");
 var DangerUtils_1 = require("./DangerUtils");
@@ -104,7 +101,7 @@ var apiForDSL = function (dsl) {
         baseUrl: dsl.settings.github.baseURL,
         headers: __assign({}, dsl.settings.github.additionalHeaders),
     };
-    var api = new rest_1.default(options);
+    var api = new GitHubNodeAPI(options);
     if (dsl.settings.github && dsl.settings.github.accessToken) {
         api.authenticate({ type: "token", token: dsl.settings.github.accessToken });
     }

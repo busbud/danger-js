@@ -1,5 +1,5 @@
 import { GitHubPRDSL, GitHubUtilsDSL } from "./../../dsl/GitHubDSL"
-import GitHub from "@octokit/rest"
+import GitHub = require("@octokit/rest")
 declare const utils: (pr: GitHubPRDSL, api: GitHub) => GitHubUtilsDSL
 /** Generates the fileContents function, needed so that Peril can re-create this func for an event */
 export declare const fileContentsGenerator: (

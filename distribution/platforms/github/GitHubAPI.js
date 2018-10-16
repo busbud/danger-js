@@ -49,7 +49,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var rest_1 = __importDefault(require("@octokit/rest"));
+var GitHubNodeAPI = require("@octokit/rest");
 var debug_1 = require("../../debug");
 var parse_link_header_1 = __importDefault(require("parse-link-header"));
 var voca_1 = __importDefault(require("voca"));
@@ -80,7 +80,7 @@ var GitHubAPI = /** @class */ (function () {
             };
             // A token should have been set by this point
             var token = accessTokenForApp || _this.token;
-            var api = new rest_1.default(options);
+            var api = new GitHubNodeAPI(options);
             api.authenticate({ type: "token", token: token });
             return api;
         };

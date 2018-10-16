@@ -1,4 +1,4 @@
-import GitHubNodeAPI from "@octokit/rest"
+import GitHubNodeAPI = require("@octokit/rest")
 import * as node_fetch from "node-fetch"
 import { GitHubPRDSL, GitHubUser } from "../../dsl/GitHubDSL"
 import { api as fetch } from "../../api/fetch"

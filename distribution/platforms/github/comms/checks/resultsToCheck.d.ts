@@ -1,7 +1,7 @@
 import { DangerResults } from "../../../../dsl/DangerResults"
 import { GitHubPRDSL } from "../../../../dsl/GitHubDSL"
 import { ExecutorOptions } from "../../../../runner/Executor"
-import GitHubNodeAPI from "@octokit/rest"
+import GitHubNodeAPI = require("@octokit/rest")
 export interface CheckImages {
   alt: string
   image_url: string

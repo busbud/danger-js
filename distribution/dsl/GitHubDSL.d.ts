@@ -1,5 +1,5 @@
 import { GitCommit } from "./Commit"
-import GitHub from "@octokit/rest"
+import GitHub = require("@octokit/rest")
 export interface GitHubJSONDSL {
   /** The issue metadata for a code review session */
   issue: GitHubIssue

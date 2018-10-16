@@ -93,17 +93,18 @@ function createDangerfileRuntimeEnvironment(dangerfileContext) {
 }
 exports.createDangerfileRuntimeEnvironment = createDangerfileRuntimeEnvironment;
 exports.runDangerfileEnvironment = function (filenames, originalContents, environment, injectedObjectToExport) { return __awaiter(_this, void 0, void 0, function () {
-    var _i, filenames_1, filename, index, originalContent, vm, content, optionalExport, results_1, error_1, isJest, errorResults, results;
+    var index, _i, filenames_1, filename, originalContent, vm, content, optionalExport, results_1, error_1, isJest, errorResults, results;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
+                index = 0;
                 _i = 0, filenames_1 = filenames;
                 _a.label = 1;
             case 1:
                 if (!(_i < filenames_1.length)) return [3 /*break*/, 8];
                 filename = filenames_1[_i];
-                index = filenames.indexOf(filename);
                 originalContent = (originalContents && originalContents[index]) || fs.readFileSync(filename, "utf8");
+                index++;
                 d("Preparing to evaluate: " + filename + "\n\n\n    ");
                 d(originalContent.split("\n").join("\n    "));
                 d("-");

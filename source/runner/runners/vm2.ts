@@ -48,11 +48,10 @@ export const runDangerfileEnvironment = async (
 ): Promise<DangerResults> => {
   // Loop through all files and their potential contents, then merge all
   // of the results into an empty re
-
+  let index = 0
   for (const filename of filenames) {
-    const index = filenames.indexOf(filename)
     const originalContent = (originalContents && originalContents[index]) || fs.readFileSync(filename, "utf8")
-
+    index++
     d(`Preparing to evaluate: ${filename}\n\n\n    `)
     d(originalContent.split("\n").join("\n    "))
     d(`-`)
